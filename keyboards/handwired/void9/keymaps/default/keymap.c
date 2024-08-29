@@ -13,34 +13,66 @@ enum layer_names {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
+    /**
+    * default layert
+    | TG(_MED)         | TG(_FNP) | TG(FNI)  |
+    | LT(_CMD, KC_DEL) | KC_UP    | KC_ESC   |
+    | KC_LEFT          | KC_DOWN  | KC_RIGHT |
+    */
+
     [_BASE] = LAYOUT_ortho_3x3(
-        TG(_MED),         TG(_FNP),   TG(_FNI), \
-        LT(_CMD, KC_DEL), KC_UP,      KC_ESC, \
-        KC_LEFT,          KC_DOWN,    KC_RIGHT \
+        TG(_MED),         TG(_FNP),   TG(_FNI),
+        LT(_CMD, KC_DEL), KC_UP,      KC_ESC,
+        KC_LEFT,          KC_DOWN,    KC_RIGHT
     ),
 
-    // extra commands
+    /**
+    * extra commands
+    *
+    | QK_BOOT | KC_PWR   | KC_SLEP |
+    | KC_TRNS | KC_ENT   | KC_PGUP |
+    | KC_WAKE | KC_SPACE | KC_PGDN |
+    |         |          |         |
+    */
     [_CMD] = LAYOUT_ortho_3x3(
         QK_BOOT,       KC_PWR,       KC_SLEP,
         KC_TRNS,       KC_ENT,       KC_PGUP,
         KC_WAKE,       KC_SPACE,     KC_PGDN
     ),
 
-    // media layer
+    /**
+    * media layer
+    *
+    | KC_TRNS | KC_TRNS | KC_TRNS |
+    | KC_MUTE | KC_VOLU | KC_MPLY |
+    | KC_MPRV | KC_VOLD | KC_MNXT |
+    */
     [_MED] = LAYOUT_ortho_3x3(
         KC_TRNS,      KC_TRNS,       KC_TRNS,
         KC_MUTE,      KC_VOLU,       KC_MPLY,
         KC_MPRV,      KC_VOLD,       KC_MNXT
     ),
 
-    // function keys odd
+    /**
+    * function keys odd
+    *
+    | KC_TRNS | KC_TRNS | KC_TRNS |
+    | KC_F8   | KC_F10  | KC_F12  |
+    | KC_F2   | KC_F4   | KC_F6   |
+    */
     [_FNP] = LAYOUT_ortho_3x3(
         KC_TRNS,    KC_TRNS,    KC_TRNS,
         KC_F8,      KC_F10,     KC_F12,
         KC_F2,      KC_F4,      KC_F6
     ),
 
-    // function keys odd
+    /**
+    * function keys odd
+    *
+    | KC_TRNS | KC_TRNS | KC_TRNS |
+    | KC_F7   | KC_F9   | KC_F11  |
+    | KC_F1   | KC_F3   | KC_F5   |
+    */
     [_FNI] = LAYOUT_ortho_3x3(
         KC_TRNS,    KC_TRNS,   KC_TRNS,
         KC_F7,      KC_F9,     KC_F11,
