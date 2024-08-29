@@ -1,0 +1,6 @@
+CONFIG_USB_ACM=y
+MCU = atmega32u4
+VIA_ENABLE = no
+BOOTLOADER = caterina
+ENCODER_ENABLE = yes
+ENCODER_MAP_ENABLE = yes
